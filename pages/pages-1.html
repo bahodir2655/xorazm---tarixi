@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xorazm Tarixi</title>
+    <style>
+            h1 {
+    margin: 0;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+p {
+    color: #555;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 60%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    float: right;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <body>
+        <header>
+            <h1>Xorazm Viloyatining Turistik Joylari</h1>
+        </header>
+    
+        <section class="card-container" style="margin-top: 30px;">
+            <div class="card">
+                <img src="/Static/images.jfif" alt="Xiva" class="card-image">
+                <div class="card-content">
+                    <h2>Xiva shahri va Ichan-Qal'a</h2>
+                    <p>Xiva shahri, O'zbekistonning eng qadimiy va go'zal shaharlaridan biri bo'lib, Xorazmning tarixiy markazidir. Shahar o'zining qadimiy qal'asi Ichan-Qal'a bilan mashhur.</p>
+                    <button class="btn" onclick="showMore('xiva')">Batafsil</button>
+                </div>
+            </div>
+            <div class="card">
+                <img src="/Static/images (1).jfif" alt="Ayaz-Kala" class="card-image">
+                <div class="card-content">
+                    <h2>Ayaz-Kala</h2>
+                    <p>Ayaz-Kala – Xorazm viloyatining qadimiy qal'alaridan biri. Bu yerda Xorazmning qadimiy tarixini o'rganish mumkin.</p>
+                    <button class="btn" onclick="showMore('ayazkala')">Batafsil</button>
+                </div>
+            </div>
+            <!-- Boshqa kartalar shu tarzda qo'shiladi -->
+        </section>
+    
+        <!-- Batafsil ma'lumot oynasi -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-description"></p>
+            </div>
+        </div>
+        
+
+  <script>
+    function showMore(location) {
+    let title = "";
+    let description = "";
+
+    if (location === 'xiva') {
+        title = "Xiva shahri va Ichan-Qal'a";
+        description = "Xiva shahri, O'zbekistonning eng qadimiy va go'zal shaharlaridan biri bo'lib, Xorazmning tarixiy markazidir. Ichan-Qal'a shaharning qadimiy qal'asi bo'lib, YUNESKOning Jahon merosi ro'yxatiga kiritilgan.";
+    } else if (location === 'ayazkala') {
+        title = "Ayaz-Kala";
+        description = "Ayaz-Kala – Xorazm viloyatining qadimiy qal'alaridan biri. Bu qal'a Xorazmning qadimiy tarixini o'rganish uchun muhim joy hisoblanadi. Ayaz-Kala Xorazmning o‘rta asrlardagi madaniy markazi bo‘lgan.";
+    }
+
+    document.getElementById("modal-title").innerText = title;
+    document.getElementById("modal-description").innerText = description;
+
+    document.getElementById("modal").style.display = "block";
+}
+
+function closeModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+  </script>
+   
+   
+</body>
+</html>

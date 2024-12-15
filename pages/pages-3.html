@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xorazm Turistik Joylari</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Umumiy body uchun */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Card uslubi */
+.card {
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Card rasm */
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card mazmuni */
+.card-content {
+    padding: 20px;
+}
+
+.card-content h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.short-description {
+    color: #555;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+/* Batafsil tugmasi */
+.btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* To'liq tasvir uchun */
+.full-description {
+    display: none;
+    color: #444;
+    margin-top: 15px;
+    font-size: 1.1em;
+}
+
+/* To'liq tasvirni ko'rsatish */
+.full-description.show {
+    display: block;
+}
+
+/* Animatsiya va smooth transition */
+.card-content h3 {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="/Static/images (2).jfif" alt="Xiva shahri" class="card-img">
+        <div class="card-content">
+            <h3>Xiva shahri va Ichan-Qal'a</h3>
+            <p class="short-description">Xiva shahri, O'zbekistonning eng qadimiy va go'zal shaharlaridan biri bo'lib, Xorazmning tarixiy markazidir...</p>
+            <button class="btn" onclick="toggleContent()">Batafsil</button>
+            <div class="full-description">
+                <p>Ichan-Qal'a, 1990-yilda YUNESKOning Jahon merosi ro'yxatiga kiritilgan va Xorazmning madaniy merosini dunyoga tanitishda katta rol o'ynaydi...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleContent() {
+            const fullDescription = document.querySelector('.full-description');
+            fullDescription.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
